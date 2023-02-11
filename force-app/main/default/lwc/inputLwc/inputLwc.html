@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <lightning-input type="text" label="Enter text 1" data-id="text1"></lightning-input>
+        <lightning-input type="text" label="Enter text 2" data-id="text2"></lightning-input>
+        <lightning-button label="Submit" onclick={submitHandler}></lightning-button>
+        <template if:true={accList}>
+            <lightning-datatable data={accList} columns={columns} key-field="Id"></lightning-datatable>
+            <!-- <template for:each={accList} for:item="acc">
+                <div key={acc.Id}>{acc.Name} {acc.Website}</div>
+            </template> -->
+        </template>
+        <template if:true={error}>
+            {error}
+        </template>
+    </lightning-card>
+</template>
